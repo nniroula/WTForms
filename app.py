@@ -6,3 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def home_route():
     return "<small>Flask is Fun </small>"
+
+@app.route('/name')
+def get_name():
+    return "<h5> Nabin &&&&&&& Niroula </h5>"
