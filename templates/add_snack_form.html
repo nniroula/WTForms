@@ -8,17 +8,17 @@
 </head>
 <body>
     <h1>New Snack</h1>
-    <form >
+    <form action="" method="POST">
         {{ form.hidden_tag() }}
-        {% for field in form 
-            if field.widget.input_type != 'hidden' %}
+        <!-- if field.widget .... means ignore hidden field, and is for CSRF token -->
+        {% for field in form if field.widget.input_type != 'hidden' %}  
             <p>
                 {{field.label }}
                 <!-- put field in paragraph tag -->
-                
                     {{field}}
                 </p>
             {% endfor %}
+        <button>Submit</button>
     </form>
     
 </body>
