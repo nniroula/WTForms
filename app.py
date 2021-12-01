@@ -11,13 +11,9 @@ app.config["SECRET_KEY"] = "whatthehell"  # secret key is needed to use CSRF in 
 def home_route():
     return "<small>Flask is Fun </small>"
 
-@app.route('/name')
-def get_name():
-    return "<h5> Nabin &&&&&&& Niroula </h5>"
-
 @app.route("/snacks/new")
 def add_snack():
-    form = AddSnacksForm()   # form is a form object
+    form = AddSnacksForm()   # form is a form object, form object comes with a field attribute, field.label
     #raise # raise is used to get error so that you can get interactive debugger tool in browser
     return render_template("add_snack_form.html", form = form)
 
